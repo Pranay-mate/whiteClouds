@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\resources\\views\\auth\\passwords",
+    "\\resources\\views\\bookings",
+    "\\resources\\views\\layouts",
+    "\\routes"
+  ],
+  "SelectedNode": "\\resources\\views\\bookings\\submit.blade.php",
+  "PreviewInSolutionExplorer": false
+}
