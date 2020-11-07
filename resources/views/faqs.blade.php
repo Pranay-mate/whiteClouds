@@ -157,7 +157,7 @@
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>© 2010-2020 WhiteClouds, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
       </footer>
-
+      @yield('content')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

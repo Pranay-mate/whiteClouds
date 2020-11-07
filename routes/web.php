@@ -29,6 +29,9 @@ Route::get('/contactUs', function () {
     return view('contactUs');
 });
 
+ Route::post('/contactUs/submit', 'App\Http\Controllers\ContactsController@store');
+
+
 Route::get('/faqs', function () {
     return view('faqs');
 });
