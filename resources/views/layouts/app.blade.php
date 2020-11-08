@@ -18,12 +18,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
 </head>
 <body>
     <div id="app">
     
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/"> <img src="/img/cloud2.png" width="50" height="30" alt=""
                 loading="lazy">WhiteClouds</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -59,17 +64,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contactUs">Contact Us</a>
                 </li>
-                <li class="nav-item">
+              
+                @guest
+                    
+                            @if (Route::has('register'))
+                                        <li class="nav-item">
+                    <a class="nav-link" href="/login">Book Tickets</a>
+                </li>
+                            @endif
+                        @else
+                                          <li class="nav-item">
                     <a class="nav-link" href="/bookings/create">Book Tickets</a>
                 </li>
+                        @endguest
                 <li class="nav-item">
                     <a class="nav-link" href="/faqs">FAQs <span class="badge badge-warning">?</span></a>
                 </li>
             </ul>
         
-     
-        </div>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
@@ -94,26 +107,38 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/home">
+                                        Dashboard
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                  
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
                                 </div>
+                                 
                             </li>
                         @endguest
                     </ul>
                 </div>
+        </div>
     </nav>
        
 
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
+          <footer class="container">
+        <p class="float-right"><a href="/contactUs">Contact Us</a></p>
+        <p class='float-left'>© 2010-2020 WhiteClouds, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
 </body>
 </html>
