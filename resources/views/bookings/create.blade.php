@@ -184,4 +184,34 @@
 
 </form>
       </div>
+      <script >
+function validateDate() {
+    var userdate = new Date(document.getElementById("DeptDate").value).toJSON().slice(0,10);
+    var today = new Date().toJSON().slice(0,10);
+    if(userdate < today){
+      alert('Please select Future Date');
+    }
+}
+function validatePlace() {
+    var to = document.getElementById("to").value;
+    var from = document.getElementById("from").value;
+  
+    if(to === from){
+     alert('Please select different location');
+    }
+
+}
+
+
+function validateTickets() {
+    var tickets = document.getElementById("tickets").value;
+   // alert(tickets);
+    var price = tickets * 5000;
+    //alert (price);
+      document.getElementById('cost').value=price;
+ 
+}
+</script>
 @endsection
+  
+

@@ -37,6 +37,10 @@ Route::get('/faqs', function () {
 });
 
 
+Route::get('/privacy', function () {
+    return view('privacy');
+});
+
 Route::resource('/bookings', 'App\Http\Controllers\BookingsController');
 Route::post('/bookings/submit', 'App\Http\Controllers\BookingsController@store');
 Route::post('/bookings/{{$booking->id}}', 'App\Http\Controllers\BookingsController@destroy');

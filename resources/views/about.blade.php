@@ -9,7 +9,7 @@
                         professionals</span></h2>
                 <p class="lead">The right to health for all people means that everyone should have access to the health
                     services they need, when and where they need them, without suffering financial hardship.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="https://klmhealthservices.com/en/airport-medical-services/medical-advice-facilities/" target="_blank" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-md-5">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="/img/abt3.jpg">
@@ -21,7 +21,7 @@
                 </h2>
                 <p class="lead">Luggage Care will use the bagchain services to check-in securely the baggage directly
                     with the connected ...</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="https://en.wikivoyage.org/wiki/Flight_baggage" target="_blank" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -35,7 +35,7 @@
                 <p class="lead">A failure finding task is part of a comprehensive routine maintenance program. It
                     affects the components of a system that are not readily seen during a routine inspection or
                     addressed during preventive maintenance work</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="https://www.internationalairportreview.com/topic/airport-maintenance/" target="_blank" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-md-5">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="/img/abt2.jpg">

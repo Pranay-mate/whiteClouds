@@ -136,9 +136,9 @@
         </main>
 
     </div>
-          <footer class="container">
+      <footer class="container">
         <p class="float-right"><a href="/contactUs">Contact Us</a></p>
-        <p class='float-left'>© 2010-2020 WhiteClouds, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p class='float-left'>© 2010-2020 WhiteClouds, Inc. · <a href="/privacy">Privacy & Terms</a></p>
     </footer>
 </body>
 </html>

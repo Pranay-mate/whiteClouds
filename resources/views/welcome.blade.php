@@ -5,9 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+
+        <!-- Styles -->
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -134,9 +141,6 @@
 
 
 
-
-
-
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -145,7 +149,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/img/plane2.jpg" class="d-block w-100" alt="...">
+                <img src="/img/plane2.jpg" class="img d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Flight frequency to be increased</h5>
                     <p>WhiteClouds announced that the number of flights deployed to be increased starting first week of
@@ -154,14 +158,14 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/img/map2.jpg" class="d-block w-100" alt="...">
+                <img src="/img/map2.jpg" class="img d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Plan your next vacation</h5>
                     <p>Go through our Travel Blog for a perfect vacation plan</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/img/plane5.jpg" class="d-block w-100" alt="...">
+                <img src="/img/plane5.jpg" class="img d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Staff Members CheckUp Routines</h5>
                     <p>Every staff member in the vicinity of airport is scanned daily to ensure to prevent the spread of
@@ -178,16 +182,16 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-        <div class="container mx-10">
+        <div class="container mx-10 my-5">
  
 
 
     @if (Auth::user())
-    <h1>Hello, {{ Auth::user()->name }}<h1>
+    <h1>Hello {{ Auth::user()->name }} ,<h1>
       @else
       <p></p>
       @endif
-        <h1 class="text-center">"JET LAG IS FOR AMATEURS"</h1>
+        <h1 class="quote text-center mb-5" style="font-family: 'Fredoka One', cursive;">"THERE'S NOTHING LIKE SEEING THE WORLD FROM THOUSANDS OF FEET UP IN THE AIR"</h1>
 
           @guest
                     
@@ -208,7 +212,7 @@
                         <h3 class="mb-0">Paris</h3>
                         <div class="mb-1 text-muted">France</div>
                         <p class="card-text mb-auto">Cafes & Fashion</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                        <a href="https://en.parisinfo.com/" target="_blank" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img src="/img/paris10.jpg">
@@ -223,7 +227,7 @@
                         <h3 class="mb-0">New York</h3>
                         <div class="mb-1 text-muted">USA</div>
                         <p class="mb-auto">Times Square</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                        <a href="https://www.nycgo.com/" target="_blank" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img src="/img/city10.jpg" </div>
@@ -242,7 +246,7 @@
                         <h3 class="mb-0">Rome</h3>
                         <div class="mb-1 text-muted">Italy</div>
                         <p class="card-text mb-auto">Colosseum, Pantheon</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                        <a href="https://www.tripadvisor.in/Tourism-g187791-Rome_Lazio-Vacations.html" target="_blank" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img src="/img/italy10.jpg">
@@ -257,7 +261,7 @@
                         <h3 class="mb-0">Sydney</h3>
                         <div class="mb-1 text-muted">Austrilia</div>
                         <p class="mb-auto">Opera House</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                        <a href="https://www.australia.com/en-in/places/sydney-and-surrounds/guide-to-sydney.html" target="_blank" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img src="/img/sydney10.jpg" </div>
@@ -278,18 +282,17 @@
         <div class="card-body">
           <h5 class="card-title">Family Discounts 20%</h5>
           <p class="card-text">Get 20% off your price with individuals more than 4 on World Tour by using COUPON code "FAMILY"</p>
-          <a href="#" class="btn btn-primary">View Offer</a>
+          <a href="/bookings/create" class="btn btn-primary">Book Now</a>
         </div>
         <div class="card-footer text-muted">
-          Valid till 30th September 2020
+          Valid till 30th December 2020
         </div>
       </div>
 
 
-
     <footer class="container">
         <p class="float-right"><a href="/contactUs">Contact Us</a></p>
-        <p class='float-left'>© 2010-2020 WhiteClouds, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p class='float-left'>© 2010-2020 WhiteClouds, Inc. · <a href="/privacy">Privacy & Terms</a></p>
     </footer>
    
     <!-- Optional JavaScript -->
