@@ -5,10 +5,10 @@
     @if (Auth::user())
 
           @if (Auth::user()->name=='Pranay')
-          <div class="card">
+          <div class="card" >
                 <div class="card-header">{{ __('Dashboard') }}</div>
             
-                <div class="card-body">
+                <div class="card-body" style="overflow:scroll">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -20,6 +20,7 @@
          <table class='table table-striped'>
          <tr>
                     <th>ticket_id</th>
+                    <th>User Name</th>
                     <th>to</th>
                     <th>from</th>
                     <th>DeptDate</th>
@@ -27,12 +28,14 @@
                     <th>class</th>
                     <th>tickets</th>
                     <th>cost</th>
+                    <th>Booking Date & Time</th>
                     <th>Update Ticket</th>
                     <th>Delete Ticket</th>
                     </tr>
         @foreach($Bookings as $booking)
                     <tr>
                     <th>{{$booking->id}}</th>
+                    <th>{{$booking->Fname}}</th>
                     <th>{{$booking->to}}</th>
                     <th>{{$booking->from}}</th>
                     <th>{{$booking->DeptDate}}</th>
@@ -40,6 +43,7 @@
                     <th>{{$booking->Class}}</th>
                     <th>{{$booking->tickets}}</th>
                     <th>{{$booking->cost}}</th>
+                    <th>{{$booking->created_at}}</th>
                      <th>
                      <form action="/bookings/{{$booking->id}}/edit" method="GET">
                         @csrf
