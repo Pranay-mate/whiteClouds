@@ -93,7 +93,7 @@
                     @if (Auth::user())
                     @if (Auth::user()->name=='Pranay')
                     <li class="nav-item">
-                    <a class="nav-link badge-info mx-2" href="/bookings">Admin Dashboard</a>
+                    <a class="nav-link badge-info mx-2 rounded" href="/bookings">Admin Dashboard</a>
                 </li>
                     @else
                     @endif
