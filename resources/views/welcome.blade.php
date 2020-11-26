@@ -92,13 +92,24 @@
             </ul>
         
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <!-- Left Side Of Navbar -->
+                 
                     <ul class="navbar-nav mr-auto">
-
+                    
                     </ul>
-
+                 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                    @if (Auth::user())
+                    @if (Auth::user()->name=='Pranay')
+                    <li class="nav-item">
+                    <a class="nav-link badge-info mx-2" href="/bookings">Admin Dashboard</a>
+                </li>
+                    @else
+                    @endif
+                    @endif
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

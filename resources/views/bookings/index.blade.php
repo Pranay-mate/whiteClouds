@@ -2,9 +2,10 @@
 
 @section('content')
     <h1 style='text-align:center;'>Admin Panel</h1>
-   
+    @if (Auth::user())
 
-       <div class="card">
+          @if (Auth::user()->name=='Pranay')
+          <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
             
                 <div class="card-body">
@@ -61,5 +62,19 @@
       @endif
                 </div>
             </div>
+          @else
+          <div class='container'>
+          <h1>You Don't have privilage of admin user</h1>
+          </div>
+          @endif
+          @else
+
+          <div class='container'>
+          <h1>You Don't have privilage of admin user</h1>
+          </div>
+          @endif
+          
+
+
             
  @endsection

@@ -63,8 +63,8 @@
                 <div class="col-md-3">
                  <label for="to">To:</label><br>
         
-    <select class="custom-select " name="to" id="to"  onchange="validatePlace()" required>
-    <option selected>Choose...</option>
+    <select class="custom-select choice" name="to" id="to"  onchange="validatePlace()" required>
+    <option selected disabled>Choose...</option>
     <option value="Los Angeles">Los Angeles</option>
     <option value="Dubai">Dubai</option>
     <option value="London">Londan</option>
@@ -74,8 +74,8 @@
                 </div>
                 <div class="col-md-3">
                  <label for="from">From:</label><br>
-  <select class="custom-select " name="from" id="from"  onchange="validatePlace()" required>
-    <option selected>Choose...</option>
+  <select class="custom-select choice" name="from" id="from"  onchange="validatePlace()" required>
+    <option selected  disabled>Choose...</option>
     <option value="Los Angeles">Los Angeles</option>
     <option value="Dubai">Dubai</option>
     <option value="London">Londan</option>
@@ -88,7 +88,7 @@
 
                       <div class="col">
                 <label for="DeptDate">Departure Date:</label>
-                <input type="date" onchange="validateDate()" id="DeptDate" name="DeptDate" required>
+                <input type="date" onclick="validateDate()" id="DeptDate" name="DeptDate" required>
                 </div>
                         <div class="col">
                 <label for="DeptTime">Departure Time:</label>
@@ -185,14 +185,26 @@
 </form>
       </div>
       <script >
+ 
+
 function validateDate() {
-    var userdate = new Date(document.getElementById("DeptDate").value).toJSON().slice(0,10);
-    var today = new Date().toJSON().slice(0,10);
-    if(userdate < today){
-      alert('Please select Future Date');
-    }
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    $('#DeptDate').attr('min', maxDate);
 }
+
 function validatePlace() {
+     
+
     var to = document.getElementById("to").value;
     var from = document.getElementById("from").value;
   

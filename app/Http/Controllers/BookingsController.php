@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use Illuminate\Support\Facades\Validator;
+
 
 class BookingsController extends Controller
 {
@@ -37,6 +39,9 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
+        Validator::make($request->all(), [
+            'to' => 'required|different:from',
+        ])->validate();
          $Booking = new Booking();
          $Booking->Fname = request('Fname');
          $Booking->Lname = request('Lname');
