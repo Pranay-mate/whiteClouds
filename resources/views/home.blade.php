@@ -63,7 +63,7 @@
         @endforeach
         </table>
       @else
-      <p>no posts</p>
+      <p>No ticket booked</p>
       @endif
                 </div>
             </div>
