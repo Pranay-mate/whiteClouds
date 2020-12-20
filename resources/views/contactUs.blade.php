@@ -5,7 +5,7 @@
 
 
     <div class="container my-4">
-    <form  action="/contactUs/submit" method="POST"">
+    <form  action="/contactUs/submit" method="POST">
                         @csrf
 
                         <div class="form-group">

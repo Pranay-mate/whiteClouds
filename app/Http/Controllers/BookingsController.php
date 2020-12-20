@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\Mails;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Notifications\Messages\NexmoMessage;
 
 class BookingsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +65,14 @@ class BookingsController extends Controller
          $Booking->payment = request('payment');
          $Booking->user_id = auth()->user()->id;
          $Booking->save();
+
+         $details=[
+            'title'=>'Mail title',
+            'body'=>'Mail body'
+        ];
+        Mail::to("matepranay@gmail.com")->send(new Mails($details));
+       
+
           return view('bookings.submit')->with('Booking', $Booking);
     }
 
@@ -135,4 +145,14 @@ class BookingsController extends Controller
          $Booking->delete();
           return redirect('/home')->with('sucess', 'Ticket removed');
     }
+
+
+   /**
+    *  message notification
+    */
+    public function toNexmo($notifiable)
+{
+    return (new NexmoMessage)
+                ->content('Your SMS message content');
+}
 }

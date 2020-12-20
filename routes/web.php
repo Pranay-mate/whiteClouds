@@ -43,6 +43,9 @@ Route::get('/privacy', function () {
 
 Route::resource('/bookings', 'App\Http\Controllers\BookingsController');
 Route::post('/bookings/submit', 'App\Http\Controllers\BookingsController@store');
+
 Route::post('/bookings/{{$booking->id}}', 'App\Http\Controllers\BookingsController@destroy');
 Route::get('/bookings/{{$booking->id}}/edit', 'App\Http\Controllers\BookingsController@edit');
 Route::put('/bookings/{{$booking->id}}', 'App\Http\Controllers\BookingsController@update');
+
+
