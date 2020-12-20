@@ -70,7 +70,7 @@ class BookingsController extends Controller
             'title'=>'Mail title',
             'body'=>'Mail body'
         ];
-        Mail::to("matepranay@gmail.com")->send(new Mails($details));
+        Mail::to(request('email'))->send(new Mails($details));
        
 
           return view('bookings.submit')->with('Booking', $Booking);
